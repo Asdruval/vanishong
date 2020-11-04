@@ -4,6 +4,15 @@
 #'     DO NOT REMOVE.
 #' @import shiny
 #' @noRd
+
+tweaks <- 
+  list(tags$head(tags$style(HTML("
+                                 #checkGroup { 
+                                   column-count: 3; 
+                                 } 
+                                 ")) 
+                                 ))
+
 app_server <- function( input, output, session ) {
     res_auth <- shinymanager::secure_server(
         check_credentials = shinymanager::check_credentials(
